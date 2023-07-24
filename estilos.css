@@ -1,0 +1,106 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: gray;
+    background-size: cover;
+    border-radius: 30px;
+    color: black;
+    font-size: 55px;
+  }
+
+.foto{
+  border: 5px white solid;
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  border-radius: 10px;
+}
+
+img{
+    height: auto;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0px;
+    font-family: fantasy;
+}
+
+h3 {
+    text-align: center;
+    border: gray double 10px;
+    padding: 10px;
+    margin: 18px;
+    border-radius: 10px;
+    margin-left: 30px;
+  }
+
+.calculador{
+    margin: 25px;
+  }
+
+  form {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+label {
+    font-size: 28px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+  }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+  }
+  
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, font-size 0.5s ease;
+    margin-bottom: 30px;
+  }
+  
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+p#total {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
