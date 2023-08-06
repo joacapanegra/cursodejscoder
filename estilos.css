@@ -92,10 +92,10 @@ button {
   }
   
 button:hover {
-    background-color: #45a049;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: scroll green;
   }
   
 p#total {
@@ -104,3 +104,23 @@ p#total {
     font-weight: bold;
     margin-top: 10px;
   }
+
+#finalizarButton{
+  background-color: red;
+  width: 30%;
+  font-size: medium;
+  font: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 35%;
+}
+
+#finalizarButton a{
+  text-decoration: none;
+  color: white;
+
+}
+
+#finalizarButton:hover{
+  background: fixed;
+  border: 1px white solid;
+}
