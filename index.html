@@ -16,11 +16,9 @@
         <h1>Stickers de Hemisferio Darwin</h1>
         <img src="img/smiley-1635449_1920.png" alt="">
     </header>
-    
     <div class="data">
-        <h3>A partir de 10 por sticker, se aplica un 10% de descuento 😎 😎 😎 
-        </h3>
-        <h3> <u>Precios:</u>
+        <h3>A partir de 10 por sticker, se aplica un 10% de descuento 😎 😎 😎</h3>
+        <h3><u>Precios:</u>
             <p>Sticker celestia: 5$</p>
             <p>Sticker de nuevo: 3$</p>
             <p>Sticker logohd: 7$</p>
@@ -29,7 +27,7 @@
             Hablanos para tema de envio 🏍️ 🏍️ 🏍️
         </h3>
     </div>
-    
+
     <div class="calculador">
         <div class="foto">
             <h2>Celestia</h2>
@@ -39,7 +37,7 @@
         <label>Cantidad:</label>
         <input type="number" class="cantidad-input" id="cantidad1" value="0">
         <hr>
-        
+
         <div class="foto">
             <h2>De nuevo</h2>
             <img src="./img/de nuevo.jpg" alt="">
@@ -48,7 +46,7 @@
         <label>Cantidad:</label>
         <input type="number" class="cantidad-input" id="cantidad2" value="0">
         <hr>
-    
+
         <div class="foto">
             <h2>Logo H.D.</h2>
             <img src="./img/logohd.jpg" alt="">
@@ -57,16 +55,18 @@
         <label>Cantidad:</label>
         <input type="number" class="cantidad-input" id="cantidad3" value="0">
         <hr>
-    
+
         <button onclick="calcularTotal()">Calcular Total</button>
-    
+
         <h2>Resultado:</h2>
         <div id="detalle-compra"></div>
     </div>
     <p id="total">Total a pagar: $0</p>
-    
-    <button id="finalizarButton" style="display: none;" onclick="finalizarCompra()">Finalizar la Compra</button>
-    
+
+    <button id="finalizarButton" style="display: none;" onclick="finalizarCompra(); descargarArchivo();">Descargue su compra y mandelo a Whatsapp</button>
+
+
+    <button id="finalizarButton" style="display: none;" onclick="finalizarCompra()">Finalizar la Compra</button> 
+
   </body>
-  
   </html>

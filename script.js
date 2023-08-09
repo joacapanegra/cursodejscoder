@@ -6,7 +6,6 @@ class Sticker {
   }
 }
 
-// Obtener los datos de stickers desde el Storage (localStorage o sessionStorage)
 let storedStickers = localStorage.getItem("stickers");
 let stickers = [];
 
@@ -90,6 +89,7 @@ function calcularTotal() {
   if (isNaN(total)) {
     alert("El total a pagar es inválido. Por favor, ingrese números válidos en todos los campos de cantidad.");
   }
+  return total; // Devolver el total calculado
 }
 
 document.getElementById("calcularButton").addEventListener("click", calcularTotal);
@@ -115,4 +115,44 @@ function finalizarCompra() {
 
 function mostrarBotonFinalizar() {
   document.getElementById("finalizarButton").style.display = "block";
+}
+
+// Función para descargar el archivo de detalle de compra
+function descargarArchivo() {
+  let contenidoArchivo = generarContenidoArchivo();
+  
+  const blob = new Blob([contenidoArchivo], { type: 'text/plain' });
+  
+  const enlaceDescarga = document.createElement('a');
+  enlaceDescarga.href = URL.createObjectURL(blob);
+  enlaceDescarga.download = 'detalle_compra.txt';
+  enlaceDescarga.style.display = 'none';
+  document.body.appendChild(enlaceDescarga);
+  
+  enlaceDescarga.click();
+  
+  document.body.removeChild(enlaceDescarga);
+}
+
+// Función para generar el contenido del archivo
+function generarContenidoArchivo() {
+  let contenido = '';
+  let total = 0;
+
+  stickers.forEach((sticker, index) => {
+    contenido += `Sticker ${index + 1}: ${sticker.nombre}, Cantidad: ${sticker.cantidad}\n`;
+
+    let subtotal = sticker.cantidad * sticker.precioUnitario;
+
+    if (sticker.cantidad >= 10) {
+      let descuento = subtotal * 0.1; 
+      subtotal -= descuento;
+    }
+
+    total += subtotal;
+  });
+
+  contenido += `\nTotal a pagar: $${total}`;
+
+  return contenido;
 }
