@@ -14,40 +14,42 @@ header{
 
 header img{
   width: 8%;
-  height: auto;
   margin-left: 5%;
   margin-right: 5%;
+  padding: 10px;
 }
 
 h1 {
     text-align: center;
     margin-top: 20px;
-    font-family: 'Monoton';
+    font-family: 'Bungee Outline';
     background-size: cover;
     border-radius: 30px;
-    color: black;
+    color: gray;
     font-size: 3vw;
     width: 84%;
+    background-color: black;
   }
 
 .foto{
-  border: 5px white solid;
-  padding: 5px;
+  border: 5px gray solid;
   min-width: 210px;
   border-radius: 10px;
+  margin-left: 15px;
 }
 
-div img{
-    height: auto;
-    width: 50vw;
-    margin-left: 22%;
-  }
+div.foto img {
+  height: auto;
+  width: 50vw;
+  display: block; 
+  margin: 0 auto; 
+}
 
 h2 {
     font-size: 7vw;
     text-align: center;
     margin-top: 0px;
-    font-family: fantasy;
+    font-family: 'Monoton', cursive;
     margin: 0;
     text-decoration: underline;
     padding: 5px;
@@ -57,6 +59,7 @@ h6{
   text-align: center;
   margin: 0;
   font-size: medium;
+  margin-bottom: 5px;
 }
 
 h3 {
@@ -78,12 +81,13 @@ h3 {
   }
   
 label {
-    font-size: 28px;
+    font-size: 38px;
+    font-weight: bold;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     justify-content: center;
-    margin-top: 20px;
-
+    margin-top: 5px;
+    font-family: 'Gidugu', sans-serif;
   }
   
   input {
@@ -93,8 +97,16 @@ label {
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 20px;
+    transition: border-color 0.3s;
+    border: 2px solid transparent
   }
   
+input:hover{
+  border-color: grey;
+  border-radius: 5px;
+}
+
+
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -105,7 +117,7 @@ button {
     width: 80%;
     margin-left: 10%;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: 25px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, font-size 0.5s ease;
     margin-bottom: 30px;
