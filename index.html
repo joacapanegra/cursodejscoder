@@ -11,13 +11,12 @@
     <title>Stickers HD</title>
 </head>
 <body>
-<header>
-    <img src="img/smiley-1635449_1920.png" alt="">
-    <h1>Stickers de Hemisferio Darwin</h1>
-    <img src="img/smiley-1635449_1920.png" alt="">
-</header>
-
-
+    <header>
+        <img src="img/smiley-1635449_1920.png" alt="">
+        <h1>Stickers de Hemisferio Darwin</h1>
+        <img src="img/smiley-1635449_1920.png" alt="">
+    </header>
+    
     <div class="data">
         <h3>A partir de 10 por sticker, se aplica un 10% de descuento 😎 😎 😎 
         </h3>
@@ -30,18 +29,16 @@
             Hablanos para tema de envio 🏍️ 🏍️ 🏍️
         </h3>
     </div>
-
+    
     <div class="calculador">
-        
         <div class="foto">
             <h2>Celestia</h2>
             <img src="./img/celestia.jpg" alt="">
             <h6>(sticker 1)</h6>
         </div>
         <label>Cantidad:</label>
-        <input type="number" class="cantidad-input" id="cantidad1">
-       <hr>
-      
+        <input type="number" class="cantidad-input" id="cantidad1" value="0">
+        <hr>
         
         <div class="foto">
             <h2>De nuevo</h2>
@@ -49,30 +46,27 @@
             <h6>(sticker 2)</h6>
         </div>
         <label>Cantidad:</label>
-        <input type="number" class="cantidad-input" id="cantidad2">
-        
+        <input type="number" class="cantidad-input" id="cantidad2" value="0">
         <hr>
-
+    
         <div class="foto">
             <h2>Logo H.D.</h2>
             <img src="./img/logohd.jpg" alt="">
             <h6>(sticker 3)</h6>
         </div>
         <label>Cantidad:</label>
-        <input type="number" class="cantidad-input" id="cantidad3">
-
+        <input type="number" class="cantidad-input" id="cantidad3" value="0">
         <hr>
-
+    
         <button onclick="calcularTotal()">Calcular Total</button>
-
+    
         <h2>Resultado:</h2>
-
         <div id="detalle-compra"></div>
-</div>
-<p id="total">Total a pagar: $0</p>
-
-<button id="finalizarButton" style="display: none;" onclick="finalizarCompra()">Finalizar la Compra</button>
-
+    </div>
+    <p id="total">Total a pagar: $0</p>
+    
+    <button id="finalizarButton" style="display: none;" onclick="finalizarCompra()">Finalizar la Compra</button>
+    
   </body>
   
   </html>
