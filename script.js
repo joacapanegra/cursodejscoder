@@ -1,3 +1,59 @@
+document.addEventListener("DOMContentLoaded", function() {
+  Swal.fire({
+      title: '¡Bienvenido!',
+      html: `
+          <p>Para comenzar, por favor ingresa tus datos:</p>
+          <form id="datosForm">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" required>
+              <label for="edad">Edad:</label>
+              <input type="number" id="edad" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" required>
+              <button type="submit">Enviar</button>
+          </form>
+      `,
+      showCancelButton: false,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      customClass: {
+          popup: 'mi-alerta-inicial',
+      },
+      onOpen: (modal) => {
+          const datosForm = modal.querySelector("#datosForm");
+          datosForm.addEventListener("submit", function(event) {
+              event.preventDefault();
+              const nombre = document.getElementById("nombre").value;
+              const edad = document.getElementById("edad").value;
+              const email = document.getElementById("email").value;
+
+              if (nombre && edad && email) {
+                  Swal.close(); // Cerrar el SweetAlert
+
+                  // Mostrar los stickers y la calculadora
+                  const calculador = document.getElementById("calculador");
+                  calculador.style.display = "block";
+              }
+          });
+      }
+  });
+});
+
+
+
+// Cargar los datos de stickers y precios desde un archivo JSON
+fetch('precios.json')
+  .then(response => response.json())
+  .then(data => {
+    const preciosElement = document.getElementById("precios");
+    preciosElement.innerHTML = "<u>Precios:</u>";
+
+    data.stickers.forEach(sticker => {
+      preciosElement.innerHTML += `<p>${sticker.nombre}: ${sticker.precio}$</p>`;
+    });
+  })
+  .catch(error => console.error('Error:', error));
+
 class Sticker {
   constructor(nombre, precioUnitario, cantidad) {
     this.nombre = nombre;
