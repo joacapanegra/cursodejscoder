@@ -1,44 +1,59 @@
 document.addEventListener("DOMContentLoaded", function() {
   Swal.fire({
-      title: '¡Bienvenido!',
-      html: `
-          <p>Para comenzar, por favor ingresa tus datos:</p>
-          <form id="datosForm">
-              <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" required>
-              <label for="edad">Edad:</label>
-              <input type="number" id="edad" required>
-              <label for="email">Email:</label>
-              <input type="email" id="email" required>
-              <button type="submit">Enviar</button>
-          </form>
-      `,
-      showCancelButton: false,
-      showConfirmButton: false,
-      allowOutsideClick: false,
-      customClass: {
-          popup: 'mi-alerta-inicial',
-      },
-      onOpen: (modal) => {
-          const datosForm = modal.querySelector("#datosForm");
-          datosForm.addEventListener("submit", function(event) {
-              event.preventDefault();
-              const nombre = document.getElementById("nombre").value;
-              const edad = document.getElementById("edad").value;
-              const email = document.getElementById("email").value;
+    title: '¡Bienvenido!',
+    html: `
+        <h4>Para comenzar, por favor ingresa tus datos:</h4>
+        <form id="datosForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <p><a href="#" id="saltearFormulario">Saltear Formulario</a></p>
 
-              if (nombre && edad && email) {
-                  Swal.close(); // Cerrar el SweetAlert
+    `,
+    showCancelButton: false,
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    customClass: {
+        container: 'mi-alerta-inicial',
+    },
+    didOpen: (modal) => {
+        const datosForm = modal.querySelector("#datosForm");
+        const saltearFormulario = modal.querySelector("#saltearFormulario");
+        
+        datosForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const edad = parseInt(document.getElementById("edad").value);
+            const email = document.getElementById("email").value;
 
-                  // Mostrar los stickers y la calculadora
-                  const calculador = document.getElementById("calculador");
-                  calculador.style.display = "block";
-              }
-          });
-      }
+            if (nombre && !isNaN(edad) && edad >= 0 && email) {
+                Swal.close(); // Cerrar el SweetAlert
+
+                // Mostrar los stickers y la calculadora
+                const calculador = document.getElementById("calculador");
+                calculador.style.display = "block";
+            } else {
+                alert("Por favor, ingrese datos válidos en el formulario.");
+            }
+        });
+
+        saltearFormulario.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            Swal.close(); // Cerrar el SweetAlert
+
+            // Mostrar los stickers y la calculadora
+            const calculador = document.getElementById("calculador");
+            calculador.style.display = "block";
+        });
+    }
   });
 });
-
 
 
 // Cargar los datos de stickers y precios desde un archivo JSON
@@ -212,3 +227,5 @@ function generarContenidoArchivo() {
 
   return contenido;
 }
+
+
